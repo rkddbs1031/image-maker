@@ -1,4 +1,4 @@
-# my-foundation
+# my-foundation with TypeScript & React
 
 ## 📌 사용법 
 1. git clone https://github.com/rkddbs1031/my-foundation.git
