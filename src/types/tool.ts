@@ -1,6 +1,7 @@
-export interface Size {
+export interface StyleState {
   width: number
   height: number
+  alignType: AlignType
 }
 
 export enum AlignType {
