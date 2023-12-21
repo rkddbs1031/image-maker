@@ -1,4 +1,4 @@
-import SizeForm from './\bSizeForm'
+import SizeForm from './SizeForm'
 import styles from './toolContainer.module.scss'
 
 const ToolContainer = () => {
