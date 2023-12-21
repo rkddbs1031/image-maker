@@ -5,17 +5,19 @@ import { alignList } from 'utils/tool'
 
 import { cx } from 'styles'
 import styles from './toolContainer.module.scss'
+import { useRecoilState } from 'recoil'
+import { styleState } from 'states/tool'
 
 const AlignForm = () => {
-  const [alignType, setAlignType] = useState<AlignType>(AlignType.CENTER)
+  const [style, setStyle] = useRecoilState(styleState)
   const [isDropped, setIsDropped] = useState(false)
 
-  const align = alignList.find(({ key }) => key === alignType)?.label
+  const align = alignList.find(({ key }) => key === style.alignType)?.label
 
   const handleDropDown = () => setIsDropped((prev) => !prev)
 
   const handleClickAlign = (key: AlignType) => {
-    setAlignType(key)
+    setStyle((prev) => ({ ...prev, alignType: key }))
     setIsDropped((prev) => !prev)
   }
 

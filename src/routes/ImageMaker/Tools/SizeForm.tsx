@@ -1,20 +1,21 @@
-import { ChangeEvent, useState } from 'react'
-import styles from './toolContainer.module.scss'
-import { Size } from 'types/tool'
+import { ChangeEvent } from 'react'
+import { useRecoilState } from 'recoil'
 
-const InitSize = { width: 300, height: 500 }
+import { styleState } from 'states/tool'
+
+import styles from './toolContainer.module.scss'
 
 const SizeForm = () => {
-  const [size, setSize] = useState<Size>(InitSize)
+  const [style, setStyle] = useRecoilState(styleState)
 
   const handleChangeWidth = (e: ChangeEvent<HTMLInputElement>) => {
     const width = Number(e.currentTarget.value) || 1
-    setSize((prev) => ({ ...prev, width }))
+    setStyle((prev) => ({ ...prev, width }))
   }
 
   const handleChangeHeight = (e: ChangeEvent<HTMLInputElement>) => {
     const height = Number(e.currentTarget.value) || 1
-    setSize((prev) => ({ ...prev, height }))
+    setStyle((prev) => ({ ...prev, height }))
   }
 
   return (
@@ -27,7 +28,7 @@ const SizeForm = () => {
             <input
               type='text'
               name='width'
-              value={size.width}
+              value={style.width}
               min={1}
               onChange={handleChangeWidth}
               className={styles.input}
@@ -38,7 +39,7 @@ const SizeForm = () => {
             <input
               type='text'
               name='height'
-              value={size.height}
+              value={style.height}
               min={1}
               onChange={handleChangeHeight}
               className={styles.input}
