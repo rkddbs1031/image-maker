@@ -1,4 +1,18 @@
+import Tools from './Tools'
+import ImageViewer from './ImageViewer'
+
+import styles from './imageMaker.module.scss'
+
 const ImageMaker = () => {
-  return <div>ImageMaker</div>
+  return (
+    <section id={styles.content}>
+      <h1 className='blind'>이미지 메이커</h1>
+
+      <div className={styles.container}>
+        <ImageViewer />
+        <Tools />
+      </div>
+    </section>
+  )
 }
 export default ImageMaker
