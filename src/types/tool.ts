@@ -5,6 +5,7 @@ export interface StyleState {
   fontSize: number
   fontWeight: number
   fontFamily: FontFamilyType
+  color: string
 }
 
 export enum AlignType {
