@@ -1985,6 +1985,14 @@
   resolved "https://registry.npmjs.org/@types/range-parser/-/range-parser-1.2.4.tgz"
   integrity sha512-EEhsLsD6UsDM1yFhAvy0Cjr6VwmpMWqFBCb9w07wVugF7w9nfajxLuVmngTIpgS6svCnm6Vaw+MZhoDCKnOfsw==
 
+"@types/react-color@^3.0.10":
+  version "3.0.10"
+  resolved "https://registry.npmjs.org/@types/react-color/-/react-color-3.0.10.tgz"
+  integrity sha512-6K5BAn3zyd8lW8UbckIAVeXGxR82Za9jyGD2DBEynsa7fKaguLDVtjfypzs7fgEV7bULgs7uhds8A8v1wABTvQ==
+  dependencies:
+    "@types/react" "*"
+    "@types/reactcss" "*"
+
 "@types/react-dom@^18.0.0", "@types/react-dom@^18.0.6":
   version "18.0.6"
   resolved "https://registry.npmjs.org/@types/react-dom/-/react-dom-18.0.6.tgz"
@@ -2000,6 +2008,13 @@
     "@types/prop-types" "*"
     "@types/scheduler" "*"
     csstype "^3.0.2"
+
+"@types/reactcss@*":
+  version "1.2.11"
+  resolved "https://registry.npmjs.org/@types/reactcss/-/reactcss-1.2.11.tgz"
+  integrity sha512-0fFy0ubuPlhksId8r9V8nsLcxBAPQnn15g/ERAElgE9L6rOquMj2CapsxqfyBuHlkp0/ndEUVnkYI7MkTtkGpw==
+  dependencies:
+    "@types/react" "*"
 
 "@types/resolve@1.17.1":
   version "1.17.1"
