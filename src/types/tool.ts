@@ -3,12 +3,14 @@ export interface StyleState {
   height: number
   alignType: AlignType
   fontSize: number
+  fontWeight: number
+  fontFamily: FontFamilyType
 }
 
 export enum AlignType {
-  CENTER = 'CENTER',
-  LEFT = 'LEFT',
-  RIGHT = 'RIGHT',
+  Center = 'center',
+  Left = 'left',
+  Right = 'right',
 }
 
 export interface AlignList {
@@ -16,7 +18,17 @@ export interface AlignList {
   label: string
 }
 
-export interface FontSizeList {
+export interface FontListType {
   key: number
+  label: string
+}
+
+export enum FontFamilyType {
+  NanumGothicCoding = 'Nanum Gothic Coding',
+  Arial = 'Arial',
+}
+
+export interface FontFamilyList {
+  key: FontFamilyType
   label: string
 }
