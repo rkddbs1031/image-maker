@@ -1,5 +1,7 @@
-import AlignForm from './AlginForm'
 import SizeForm from './SizeForm'
+import AlignForm from './AlginForm'
+import FontForm from './FontForm'
+
 import styles from './toolContainer.module.scss'
 
 const ToolContainer = () => {
@@ -9,6 +11,7 @@ const ToolContainer = () => {
 
       <div className={styles.palette_container}>
         <AlignForm />
+        <FontForm />
       </div>
 
       <button type='button'>Download</button>
