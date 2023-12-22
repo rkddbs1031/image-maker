@@ -1,0 +1,11 @@
+.image_viewer_container {
+  .canvas {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .title {
+      width: 100%;
+    }
+  }
+}
