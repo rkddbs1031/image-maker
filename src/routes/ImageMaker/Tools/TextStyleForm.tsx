@@ -1,3 +1,4 @@
+import { useState } from 'react'
 import { useRecoilState } from 'recoil'
 
 import { ChromePicker, ColorResult } from 'react-color'
@@ -6,11 +7,11 @@ import { fontFamilyList, fontSizeList, fontWeightList } from 'utils/tool'
 import { FontFamilyType } from 'types/tool'
 import { styleState } from 'states/tool'
 
-import styles from './toolContainer.module.scss'
 import DropDown from 'components/DropDown'
-import { useState } from 'react'
 
-const FontForm = () => {
+import styles from './toolContainer.module.scss'
+
+const TextStyleForm = () => {
   const [style, setStyle] = useRecoilState(styleState)
   const [isOpenPicker, setIsOpenPicker] = useState(false)
 
@@ -69,4 +70,4 @@ const FontForm = () => {
   )
 }
 
-export default FontForm
+export default TextStyleForm
