@@ -10,5 +10,6 @@ export const styleState = atom<StyleState>({
     fontSize: 20,
     fontWeight: 400,
     fontFamily: FontFamilyType.NanumGothicCoding,
+    color: '#222222',
   },
 })
