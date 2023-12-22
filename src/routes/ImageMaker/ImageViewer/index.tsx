@@ -20,6 +20,7 @@ const ImageViewer = () => {
       >
         <input
           type='text'
+          value={style.title}
           className={styles.title}
           style={{
             textAlign: style.alignType,

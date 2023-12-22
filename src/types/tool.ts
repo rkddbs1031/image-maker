@@ -8,6 +8,7 @@ export interface StyleState {
   color: string
   backgroundColor: string
   backgroundImage: null | string
+  title: string
 }
 
 export enum AlignType {
