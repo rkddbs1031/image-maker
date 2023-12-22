@@ -14,7 +14,12 @@ const AlignForm = () => {
 
   return (
     <div className={styles.align_container}>
-      <DropDown defaultValue={style.alignType} list={alignList} onClickDropDownList={handleChangeAlginType} />
+      <DropDown
+        defaultValue={style.alignType}
+        list={alignList}
+        onClickDropDownList={handleChangeAlginType}
+        height={90}
+      />
     </div>
   )
 }
