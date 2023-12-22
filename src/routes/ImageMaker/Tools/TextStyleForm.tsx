@@ -1,19 +1,16 @@
-import { useState } from 'react'
 import { useRecoilState } from 'recoil'
-
-import { ChromePicker, ColorResult } from 'react-color'
 
 import { fontFamilyList, fontSizeList, fontWeightList } from 'utils/tool'
 import { FontFamilyType } from 'types/tool'
 import { styleState } from 'states/tool'
 
 import DropDown from 'components/DropDown'
+import ColorPicker from 'components/ColorPicker'
 
 import styles from './toolContainer.module.scss'
 
 const TextStyleForm = () => {
   const [style, setStyle] = useRecoilState(styleState)
-  const [isOpenPicker, setIsOpenPicker] = useState(false)
 
   const handleChangeFontSize = (fontSize: number) => setStyle((prev) => ({ ...prev, fontSize }))
 
@@ -21,9 +18,7 @@ const TextStyleForm = () => {
 
   const handleChangeFontFamily = (fontFamily: FontFamilyType) => setStyle((prev) => ({ ...prev, fontFamily }))
 
-  const handleClickOpenPicker = () => setIsOpenPicker((prev) => !prev)
-
-  const handleChangeColorPicker = (color: ColorResult) => setStyle((prev) => ({ ...prev, color: color.hex }))
+  const handleChangeTextColor = (color: string) => setStyle((prev) => ({ ...prev, color }))
 
   return (
     <div className={styles.font_container}>
@@ -56,15 +51,7 @@ const TextStyleForm = () => {
       </div>
 
       <div className={styles.font_color_container}>
-        <button type='button' onClick={handleClickOpenPicker} className={styles.selected_color}>
-          <div style={{ backgroundColor: style.color }} />
-        </button>
-
-        {isOpenPicker && (
-          <div className={styles.color_picker}>
-            <ChromePicker color={style.color} onChange={handleChangeColorPicker} />
-          </div>
-        )}
+        <ColorPicker defaultValue={style.color} onChangeColor={handleChangeTextColor} />
       </div>
     </div>
   )
