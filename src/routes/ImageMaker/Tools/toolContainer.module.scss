@@ -4,6 +4,19 @@
   align-items: center;
   gap: 12px;
 
+  .image_viewer_container {
+    .canvas {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100%;
+      width: 100%;
+
+      .title {
+        width: 100%;
+      }
+    }
+  }
   .size_container {
     width: 100%;
 
@@ -11,7 +24,7 @@
       text-align: center;
 
       dt {
-        margin-bottom: 16px;
+        display: none;
       }
 
       dd {
