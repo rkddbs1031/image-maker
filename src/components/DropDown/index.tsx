@@ -11,11 +11,12 @@ export type DropDownList<T> = {
 interface DropDownProps<T> {
   defaultValue: T
   list: DropDownList<T>[]
+  buttonMinWidth?: number
   height: number
   onClickDropDownList: (selectedValue: T) => void
 }
 
-const DropDown = <T,>({ defaultValue, list, height, onClickDropDownList }: DropDownProps<T>) => {
+const DropDown = <T,>({ defaultValue, list, buttonMinWidth, height, onClickDropDownList }: DropDownProps<T>) => {
   const [isDropped, setIsDropped] = useState(false)
   const [selectedValue, setSelectedValue] = useState(defaultValue)
 
@@ -31,14 +32,19 @@ const DropDown = <T,>({ defaultValue, list, height, onClickDropDownList }: DropD
 
   return (
     <>
-      <button type='button' className={styles.selected_algin} onClick={handleDropDown}>
+      <button
+        type='button'
+        className={styles.selected_algin}
+        onClick={handleDropDown}
+        style={{ minWidth: buttonMinWidth || 'auto' }}
+      >
         {`${dropDownLabel}`}
       </button>
 
       <div
         className={cx(styles.dropdown_list_container, { [styles.isActive]: isDropped })}
         style={{
-          height: isDropped ? height : 0,
+          height: isDropped ? `${height}px` : 0,
         }}
       >
         <ul>
