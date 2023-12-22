@@ -7,5 +7,6 @@ export const styleState = atom<StyleState>({
     width: 300,
     height: 500,
     alignType: AlignType.CENTER,
+    fontSize: 10,
   },
 })
