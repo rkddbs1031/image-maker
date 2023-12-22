@@ -1,4 +1,4 @@
-import ImageViewer from './ImageViewer'
+import BackgroundEditor from './BackgroundEditor'
 import SizeForm from './SizeForm'
 import AlignForm from './AlginForm'
 import TextStyleForm from './TextStyleForm'
@@ -8,7 +8,7 @@ import styles from './toolContainer.module.scss'
 const ToolContainer = () => {
   return (
     <div className={styles.tool_container}>
-      <ImageViewer />
+      <BackgroundEditor />
       <SizeForm />
 
       <div className={styles.palette_container}>
