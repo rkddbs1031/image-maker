@@ -5,6 +5,23 @@
   gap: 12px;
   margin-top: 36px;
 
+  .background_editor_container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+
+    .bg_editor {
+      position: relative;
+    }
+
+    .color_bg {
+    }
+
+    .image_bg {
+    }
+  }
+
   .size_container {
     width: 100%;
 
