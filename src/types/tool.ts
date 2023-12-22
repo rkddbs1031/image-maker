@@ -7,6 +7,7 @@ export interface StyleState {
   fontFamily: FontFamilyType
   color: string
   backgroundColor: string
+  backgroundImage: null | string
 }
 
 export enum AlignType {
