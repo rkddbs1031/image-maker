@@ -30,6 +30,12 @@ const DropDown = <T,>({ defaultValue, list, buttonMinWidth, height, onClickDropD
     setIsDropped((prev) => !prev)
   }
 
+  const handleCloseDropDown = () => {
+    if (!isDropped) return
+
+    setIsDropped((prev) => !prev)
+  }
+
   return (
     <>
       <button
@@ -57,6 +63,12 @@ const DropDown = <T,>({ defaultValue, list, buttonMinWidth, height, onClickDropD
           ))}
         </ul>
       </div>
+
+      {isDropped && (
+        <button type='button' className={styles.drop_down_layer} onClick={handleCloseDropDown}>
+          layer
+        </button>
+      )}
     </>
   )
 }

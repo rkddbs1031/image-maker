@@ -10,6 +10,7 @@ button.selected_algin {
 
 .dropdown_list_container {
   position: absolute;
+  z-index: 2;
   top: calc(100% + 5px);
   left: 0;
   width: 100%;
@@ -32,6 +33,7 @@ button.selected_algin {
         padding: 6px 0;
         width: 100%;
         background: #ffffff;
+        transition: 0.2s;
 
         &::before {
           position: absolute;
@@ -52,12 +54,19 @@ button.selected_algin {
       }
 
       &:hover button {
-        background: #fbfbfb;
+        background: #f7f7f7;
       }
     }
   }
+}
 
-  // &.isActive {
-  //   height: auto;
-  // }
+.drop_down_layer {
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  opacity: 0;
+  cursor: default;
 }
