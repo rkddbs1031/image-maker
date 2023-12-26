@@ -14,7 +14,7 @@ const TextForm = () => {
   return (
     <div className={styles.text_container}>
       <dl>
-        <dd className={styles.text_option_title}>title</dd>
+        <dd className={styles.text_option_title}>Text</dd>
         <dt className={styles.input_container}>
           <input id='title' type='text' value={style.title} className={styles.title} onChange={handleChangeTitle} />
         </dt>
