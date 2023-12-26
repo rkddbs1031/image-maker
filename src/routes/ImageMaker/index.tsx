@@ -39,7 +39,7 @@ const ImageMaker = () => {
         <Tools />
 
         <div className={styles.download_container}>
-          <button type='button' onClick={handleCapture}>
+          <button type='button' onClick={handleCapture} className={styles.download_button}>
             DownLoad
           </button>
         </div>
