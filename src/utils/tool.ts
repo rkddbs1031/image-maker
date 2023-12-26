@@ -32,6 +32,16 @@ export const fontWeightList: FontListType[] = [
 ]
 
 export const fontFamilyList: FontFamilyList[] = [
-  { key: FontFamilyType.NanumGothicCoding, label: 'Nanum Gothic Coding' },
-  { key: FontFamilyType.Arial, label: 'Arial' },
+  { key: FontFamilyType.NanumGothic, label: '나눔고딕(Nanum Gothic)' },
+  { key: FontFamilyType.NanumPenScript, label: '나눔손글씨펜(Nanum Pen)' },
+  { key: FontFamilyType.NanumMyeongjo, label: '나눔명조(Nanum Myeongjo)' },
+  { key: FontFamilyType.NotoSans, label: '본고딕(Noto Sans)' },
+  { key: FontFamilyType.NotoSerif, label: '본명조(Noto Serif)' },
+  { key: FontFamilyType.BlackHanSans, label: '검은고딕(Black Han Sans)' },
+  { key: FontFamilyType.Roboto, label: '로보토(Roboto)' },
+  { key: FontFamilyType.SogangUniversity, label: '서강체' },
+  { key: FontFamilyType.Diphylleia, label: '산하엽(Diphylleia)' },
+  { key: FontFamilyType.Anton, label: '안톤(Anton)' },
+  { key: FontFamilyType.GasoekOne, label: '가석(Gasoek One)' },
+  { key: FontFamilyType.DMSerifDisplay, label: 'DM Serif Display' },
 ]

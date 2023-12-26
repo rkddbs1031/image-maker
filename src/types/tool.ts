@@ -31,8 +31,21 @@ export interface FontListType {
 }
 
 export enum FontFamilyType {
-  NanumGothicCoding = 'Nanum Gothic Coding',
-  Arial = 'Arial',
+  NanumGothic = 'Nanum Gothic',
+  NotoSans = 'Noto Sans KR',
+  NotoSerif = 'Noto Serif KR',
+  Roboto = 'Roboto',
+  SogangUniversity = 'SOGANGUNIVERSITYTTF',
+  Diphylleia = "'Diphylleia', serif",
+  RubikDoodleShadow = "'Rubik_Doodle_Shadow variant0', Tofu",
+  RubikMaps = 'Rubik_Maps variant0',
+  Anton = 'Anton',
+  GasoekOne = 'Gasoek One',
+  DMSerifDisplay = 'DM Serif Display',
+  ShadowInto = 'Shadows_Into_Light variant0',
+  BlackHanSans = 'Black Han Sans',
+  NanumPenScript = 'Nanum Pen Script',
+  NanumMyeongjo = 'Nanum Myeongjo',
 }
 
 export interface FontFamilyList {
