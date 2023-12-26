@@ -1,3 +1,4 @@
+import TextForm from './TextForm'
 import BackgroundEditor from './BackgroundEditor'
 import SizeForm from './SizeForm'
 import AlignForm from './AlginForm'
@@ -15,6 +16,8 @@ const ToolContainer = () => {
         <AlignForm />
         <TextStyleForm />
       </div>
+
+      <TextForm />
     </div>
   )
 }
