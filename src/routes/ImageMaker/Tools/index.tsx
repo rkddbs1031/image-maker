@@ -15,8 +15,6 @@ const ToolContainer = () => {
         <AlignForm />
         <TextStyleForm />
       </div>
-
-      <button type='button'>Download</button>
     </div>
   )
 }

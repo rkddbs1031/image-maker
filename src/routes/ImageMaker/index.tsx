@@ -11,6 +11,10 @@ const ImageMaker = () => {
       <div className={styles.container}>
         <ImageViewer />
         <Tools />
+
+        <div className={styles.download_container}>
+          <button type='button'>DownLoad</button>
+        </div>
       </div>
     </section>
   )
