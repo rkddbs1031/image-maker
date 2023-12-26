@@ -18,12 +18,13 @@ const ImageMaker = () => {
     if (!canvasTarget) return
 
     html2canvas(canvasTarget, { width, height, scale: 1 }).then((canvas) => {
+      const today = new Date()
+      const todayDate = `${today.getFullYear()}_${today.getMonth()}_${today.getDate()}`
       const link = document.createElement('a')
 
       document.body.appendChild(link)
-
       link.href = canvas.toDataURL('image/png')
-      link.download = `${title.split(' ').join('_')}.png`
+      link.download = `${todayDate}_image_maker`
       link.click()
 
       document.body.removeChild(link)
