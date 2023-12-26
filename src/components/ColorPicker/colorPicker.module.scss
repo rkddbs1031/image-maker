@@ -9,7 +9,16 @@
 .color_picker {
   position: absolute;
   top: calc(100% + 10px);
-  left: 50%;
-  transform: translateX(-50%);
+  left: -95px;
   z-index: 2;
+
+  .layer {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    opacity: 0;
+    cursor: default;
+  }
 }

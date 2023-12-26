@@ -19,6 +19,12 @@ const ColorPicker = ({ defaultValue, onChangeColor }: ColorPickerProps) => {
     onChangeColor(color.hex)
   }
 
+  const handleCloseColorPicker = () => {
+    if (!isOpenColorPicker) return
+
+    setIsOpenColorPicker((prev) => !prev)
+  }
+
   return (
     <>
       <button type='button' onClick={handleClickOpenPicker} className={styles.selected_color}>
@@ -27,6 +33,10 @@ const ColorPicker = ({ defaultValue, onChangeColor }: ColorPickerProps) => {
 
       {isOpenColorPicker && (
         <div className={styles.color_picker}>
+          <button type='button' className={styles.layer} onClick={handleCloseColorPicker}>
+            layer
+          </button>
+
           <ChromePicker color={currentColor} onChange={handleChangeColorPicker} />
         </div>
       )}
