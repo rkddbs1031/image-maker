@@ -10,7 +10,7 @@ export const styleState = atom<StyleState>({
     fontSize: 50,
     fontWeight: 600,
     fontFamily: FontFamilyType.NanumGothicCoding,
-    color: '#222222',
+    color: '#d2d2d2',
     backgroundColor: '#eee',
     backgroundImage: null,
     title: 'Image Maker',
