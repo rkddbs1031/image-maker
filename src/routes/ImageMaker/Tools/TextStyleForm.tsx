@@ -44,8 +44,8 @@ const TextStyleForm = () => {
         <DropDown
           defaultValue={style.fontFamily}
           list={fontFamilyList}
-          buttonMinWidth={155}
-          height={56}
+          buttonMinWidth={175}
+          height={350}
           onClickDropDownList={handleChangeFontFamily}
         />
       </div>
