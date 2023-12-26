@@ -106,6 +106,14 @@
       position: relative;
     }
 
+    .align_container {
+      padding: 8px 12px;
+      background: #ffffff;
+      box-shadow: rgba(0, 0, 0, 0.02) 0px 2px 6px, rgba(0, 0, 0, 0.06) 0px -1px 0px inset,
+        rgba(0, 0, 0, 0.08) 0px 0px 0px 1px inset;
+      border-radius: 10px;
+    }
+
     .font_container {
       display: flex;
       align-items: center;
