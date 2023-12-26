@@ -1,9 +1,10 @@
+@use '/src/styles/constants/colors';
+
 .selected_color > div {
   width: 35px;
   height: 35px;
   border-radius: 5px;
-  box-shadow: rgba(0, 0, 0, 0.02) 0px 2px 6px, rgba(0, 0, 0, 0.06) 0px -1px 0px inset,
-    rgba(0, 0, 0, 0.08) 0px 0px 0px 1px inset;
+  box-shadow: colors.$BOX_SHADOW;
 }
 
 .color_picker {
