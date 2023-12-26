@@ -1,9 +1,10 @@
+import { FaAlignCenter, FaAlignLeft, FaAlignRight } from 'react-icons/fa6'
 import { AlignList, AlignType, FontFamilyList, FontFamilyType, FontListType } from 'types/tool'
 
 export const alignList: AlignList[] = [
-  { key: AlignType.Center, label: '중앙정렬' },
-  { key: AlignType.Left, label: '좌측정렬' },
-  { key: AlignType.Right, label: '우측정렬' },
+  { key: AlignType.Center, icon: FaAlignCenter },
+  { key: AlignType.Left, icon: FaAlignLeft },
+  { key: AlignType.Right, icon: FaAlignRight },
 ]
 
 export const fontSizeList: FontListType[] = [

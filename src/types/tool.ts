@@ -1,3 +1,6 @@
+import { ComponentType } from 'react'
+import { IconBaseProps } from 'react-icons'
+
 export interface StyleState {
   width: number
   height: number
@@ -19,7 +22,7 @@ export enum AlignType {
 
 export interface AlignList {
   key: AlignType
-  label: string
+  icon: ComponentType<IconBaseProps>
 }
 
 export interface FontListType {
