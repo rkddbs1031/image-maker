@@ -73,8 +73,8 @@
       display: flex;
       justify-content: center;
       align-items: center;
-      width: 27px;
-      height: 27px;
+      width: 37px;
+      height: 37px;
       border-radius: 5px;
       background: #ffffff;
       box-shadow: rgba(0, 0, 0, 0.02) 0px 2px 6px, rgba(0, 0, 0, 0.06) 0px -1px 0px inset,
@@ -82,7 +82,12 @@
 
       label {
         cursor: pointer;
+
+        svg {
+          font-size: 20px !important;
+        }
       }
+
       input[type='file'] {
         display: none;
       }
