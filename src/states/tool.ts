@@ -9,7 +9,7 @@ export const styleState = atom<StyleState>({
     alignType: AlignType.Center,
     fontSize: 50,
     fontWeight: 600,
-    fontFamily: FontFamilyType.NanumGothicCoding,
+    fontFamily: FontFamilyType.NanumGothic,
     color: '#d2d2d2',
     backgroundColor: '#eee',
     backgroundImage: null,
