@@ -68,7 +68,7 @@ const BackgroundEditor = () => {
 
         {style.blur && (
           <div className={styles.opacity_container}>
-            <input type='range' value={style.blur} min='0' max='10' step={1} onChange={handleChangeOpacity} />
+            <input type='range' value={style.blur} min='1' max='10' step={1} onChange={handleChangeOpacity} />
           </div>
         )}
       </div>
