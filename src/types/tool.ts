@@ -12,6 +12,7 @@ export interface StyleState {
   backgroundColor: string
   backgroundImage: null | string
   title: string
+  blur: number | null
 }
 
 export enum AlignType {

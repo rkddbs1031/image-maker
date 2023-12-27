@@ -45,3 +45,5 @@ export const fontFamilyList: FontFamilyList[] = [
   { key: FontFamilyType.GasoekOne, label: '가석(Gasoek One)' },
   { key: FontFamilyType.DMSerifDisplay, label: 'DM Serif Display' },
 ]
+
+export const INIT_BLUR = 3

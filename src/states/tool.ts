@@ -14,5 +14,6 @@ export const styleState = atom<StyleState>({
     backgroundColor: '#eee',
     backgroundImage: null,
     title: 'Image Maker',
+    blur: null,
   },
 })
