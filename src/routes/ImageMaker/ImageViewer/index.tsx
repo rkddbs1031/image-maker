@@ -22,12 +22,17 @@ const ImageViewer = () => {
     color: style.color,
   }
 
+  const dimLayerBlur = {
+    backdropFilter: `blur(${style.blur}px)`,
+  }
+
   return (
     <div className={styles.image_viewer_container}>
       <div className={styles.canvas} style={layoutStyle} id='canvas'>
         <p style={inputStyle} className={styles.title}>
           {style.title}
         </p>
+        {style.blur && <div className={styles.dim_layer} style={dimLayerBlur} />}
       </div>
     </div>
   )
