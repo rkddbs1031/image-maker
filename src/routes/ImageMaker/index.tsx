@@ -10,7 +10,7 @@ import ImageViewer from './ImageViewer'
 import styles from './imageMaker.module.scss'
 
 const ImageMaker = () => {
-  const { width, height, title } = useRecoilValue(styleState)
+  const { width, height } = useRecoilValue(styleState)
 
   const handleCapture = () => {
     const canvasTarget = document.getElementById('canvas')
