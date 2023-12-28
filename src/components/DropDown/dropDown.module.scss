@@ -20,6 +20,7 @@ button.selected_algin {
   box-shadow: colors.$BOX_SHADOW;
   border-radius: 10px;
   transition: height 0.3s;
+  overflow-y: scroll;
 
   ul {
     display: flex;
