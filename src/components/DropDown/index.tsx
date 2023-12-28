@@ -12,7 +12,7 @@ interface DropDownProps<T> {
   defaultValue: T
   list: DropDownList<T>[]
   buttonMinWidth?: number
-  height: number
+  height?: number
   onClickDropDownList: (selectedValue: T) => void
 }
 
@@ -36,6 +36,13 @@ const DropDown = <T,>({ defaultValue, list, buttonMinWidth, height, onClickDropD
     setIsDropped((prev) => !prev)
   }
 
+  const dropStyle = {
+    ...(!isDropped && { height: 0 }),
+    ...(isDropped && height && { height: `${height}px` }),
+    ...(isDropped && !height && { height: height ? `${height}px` : '215px' }),
+    ...(isDropped && !height && { maxHeight: height ? `${height}px` : '215px' }),
+  }
+
   return (
     <>
       <button
@@ -47,12 +54,7 @@ const DropDown = <T,>({ defaultValue, list, buttonMinWidth, height, onClickDropD
         {`${dropDownLabel}`}
       </button>
 
-      <div
-        className={cx(styles.dropdown_list_container, { [styles.isActive]: isDropped })}
-        style={{
-          height: isDropped ? `${height}px` : 0,
-        }}
-      >
+      <div className={cx(styles.dropdown_list_container, { [styles.isActive]: isDropped })} style={dropStyle}>
         <ul>
           {list.map(({ key, label }) => (
             <li key={label}>

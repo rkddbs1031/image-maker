@@ -23,12 +23,7 @@ const TextStyleForm = () => {
   return (
     <div className={styles.font_container}>
       <div className={styles.font_size_container}>
-        <DropDown
-          defaultValue={style.fontSize}
-          list={fontSizeList}
-          height={280}
-          onClickDropDownList={handleChangeFontSize}
-        />
+        <DropDown defaultValue={style.fontSize} list={fontSizeList} onClickDropDownList={handleChangeFontSize} />
       </div>
 
       <div className={styles.font_weight_container}>
@@ -45,7 +40,6 @@ const TextStyleForm = () => {
           defaultValue={style.fontFamily}
           list={fontFamilyList}
           buttonMinWidth={175}
-          height={350}
           onClickDropDownList={handleChangeFontFamily}
         />
       </div>
