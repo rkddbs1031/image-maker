@@ -1,22 +1,16 @@
-import { ChangeEvent } from 'react'
 import { useRecoilState } from 'recoil'
 
 import { styleState } from 'states/tool'
 
 import styles from './toolContainer.module.scss'
+import { FormInput } from 'components/Input'
 
 const SizeForm = () => {
   const [style, setStyle] = useRecoilState(styleState)
 
-  const handleChangeWidth = (e: ChangeEvent<HTMLInputElement>) => {
-    const width = Number(e.currentTarget.value) || 1
-    setStyle((prev) => ({ ...prev, width }))
-  }
+  const handleChangeWidth = (width: number) => setStyle((prev) => ({ ...prev, width }))
 
-  const handleChangeHeight = (e: ChangeEvent<HTMLInputElement>) => {
-    const height = Number(e.currentTarget.value) || 1
-    setStyle((prev) => ({ ...prev, height }))
-  }
+  const handleChangeHeight = (height: number) => setStyle((prev) => ({ ...prev, height }))
 
   return (
     <div className={styles.size_container}>
@@ -25,24 +19,22 @@ const SizeForm = () => {
         <dd>
           <div className={styles.input_container}>
             <span className={styles.option_title}>width</span>
-            <input
-              type='text'
+            <FormInput.Text
               name='width'
               value={style.width}
               min={1}
-              onChange={handleChangeWidth}
               className={styles.input}
+              onChange={handleChangeWidth}
             />
           </div>
           <div className={styles.input_container}>
             <span className={styles.option_title}>height</span>
-            <input
-              type='text'
+            <FormInput.Text
               name='height'
               value={style.height}
               min={1}
-              onChange={handleChangeHeight}
               className={styles.input}
+              onChange={handleChangeHeight}
             />
           </div>
         </dd>
