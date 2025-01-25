@@ -1,9 +1,9 @@
 import { useRecoilState } from 'recoil'
 
 import { styleState } from 'states/tool'
+import { FormInput } from 'components/Input'
 
 import styles from './toolContainer.module.scss'
-import { FormInput } from 'components/Input'
 
 const SizeForm = () => {
   const [style, setStyle] = useRecoilState(styleState)
@@ -19,7 +19,7 @@ const SizeForm = () => {
         <dd>
           <div className={styles.input_container}>
             <span className={styles.option_title}>width</span>
-            <FormInput.Text
+            <FormInput.Number
               name='width'
               value={style.width}
               min={1}
@@ -29,7 +29,7 @@ const SizeForm = () => {
           </div>
           <div className={styles.input_container}>
             <span className={styles.option_title}>height</span>
-            <FormInput.Text
+            <FormInput.Number
               name='height'
               value={style.height}
               min={1}

@@ -10,7 +10,7 @@ interface TextInputProps<T> {
   className?: string
 }
 
-const TextInput = <T extends InputValueType>({ name, value, min, max, onChange, className }: TextInputProps<T>) => {
+const NumberInput = <T extends InputValueType>({ name, value, min, max, onChange, className }: TextInputProps<T>) => {
   const handleInputChange = (e: ChangeEvent<HTMLInputElement>) => {
     const { value: changedValue } = e.currentTarget
 
@@ -33,5 +33,5 @@ const TextInput = <T extends InputValueType>({ name, value, min, max, onChange, 
 }
 
 export const FormInput = {
-  Text: TextInput,
+  Number: NumberInput,
 }
