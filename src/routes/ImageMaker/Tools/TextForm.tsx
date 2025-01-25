@@ -5,22 +5,21 @@ import { styleState } from 'states/tool'
 
 import { cx } from 'styles'
 import styles from './toolContainer.module.scss'
+import { FormInput } from 'components/Input'
 
 const TextForm = () => {
   const [style, setStyle] = useRecoilState(styleState)
 
-  const handleChangeTitle = (e: ChangeEvent<HTMLInputElement>) =>
-    setStyle((prev) => ({ ...prev, title: e.currentTarget.value }))
+  const handleChangeTitle = (title: string) => setStyle((prev) => ({ ...prev, title }))
 
-  const handleChangeSubTitle = (e: ChangeEvent<HTMLInputElement>) =>
-    setStyle((prev) => ({ ...prev, subTitle: e.currentTarget.value }))
+  const handleChangeSubTitle = (subTitle: string) => setStyle((prev) => ({ ...prev, subTitle }))
 
   return (
     <div className={styles.text_container}>
       <dl>
         <dd className={styles.text_option_title}>Title</dd>
         <dt className={styles.input_container}>
-          <input id='title' type='text' value={style.title} className={styles.title} onChange={handleChangeTitle} />
+          <FormInput.Text value={style.title} id='title' className={styles.title} onChange={handleChangeTitle} />
         </dt>
       </dl>
 
@@ -32,11 +31,10 @@ const TextForm = () => {
           </div>
         </dd>
         <dt className={styles.input_container}>
-          <input
-            id='title'
-            type='text'
-            value={style.subTitle}
-            className={styles.subtitle}
+          <FormInput.Text
+            value={style.title}
+            id='sub_title'
+            className={styles.subTitle}
             onChange={handleChangeSubTitle}
           />
         </dt>
