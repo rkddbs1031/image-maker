@@ -1,0 +1,81 @@
+@use '/src/styles/constants/colors';
+
+.label_row_container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    background: colors.$WHITE;
+    box-shadow: colors.$BOX_SHADOW;
+
+    .label {
+        position: relative;
+        padding: 8px 16px 7px;
+        color: colors.$GRAYA;
+        font-weight: 500;
+
+        &.hasCursor {
+            cursor: pointer;
+        }
+
+        &::after {
+            content: '';
+            display: block;
+            position: absolute;
+            top: 0;
+            right: 0px;
+            width: 1px;
+            height: 100%;
+            box-shadow: colors.$BOX_SHADOW;
+        }
+
+        &:hover {
+            .info {
+                opacity: 1;
+              visibility: visible;
+            }
+
+        }
+
+        .info {
+            position: absolute;
+            z-index: 100;
+            top: calc(100% + 12px);
+            left: 50%;
+            transform: translateX(-50%);
+            padding: 6px 12px;
+            background: colors.$GRAY6;
+            font-weight: normal;
+            width: 190px;
+            border-radius: 8px;
+            opacity: 0;
+            visibility: hidden;
+            transition: 0.3s;
+            
+
+            &::before {
+                display: block;
+                content: '';
+                position: absolute;
+                top: -2px;
+                left: 48%;
+                transform: rotate(45deg) translate(-50%);
+                transform-origin: center;
+                width: 10px;
+                height: 10px;
+                background: colors.$GRAY6;
+            }
+
+            p {
+                color: colors.$WHITE;
+                font-size: 11px;
+                line-height: 16px;
+            }
+        }
+    }
+
+    .content_container {
+        padding: 8px 16px;
+        position: relative;
+    }
+}
