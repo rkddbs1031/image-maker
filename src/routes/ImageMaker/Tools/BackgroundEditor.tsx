@@ -2,19 +2,20 @@ import { ChangeEvent, useState } from 'react'
 import { useRecoilState } from 'recoil'
 
 import { FaImage } from 'react-icons/fa6'
-import { BsLayersHalf } from 'react-icons/bs'
+import { RxPadding } from 'react-icons/rx'
 
 import { styleState } from 'states/tool'
-import { INIT_BLUR } from 'utils/tool'
+import { INIT_PADDING } from 'utils/tool'
 
 import ColorPicker from 'components/ColorPicker'
+import { FormInput } from 'components/Input'
 
 import { cx } from 'styles'
 import styles from './toolContainer.module.scss'
 
 const BackgroundEditor = () => {
   const [style, setStyle] = useRecoilState(styleState)
-  const [hasDimLayer, setHasDimLayer] = useState(false)
+  const [hasPadding, setHasPadding] = useState(false)
 
   const handleChangeBGColor = (backgroundColor: string) =>
     setStyle((prev) => ({ ...prev, backgroundColor, backgroundImage: null }))
@@ -27,13 +28,12 @@ const BackgroundEditor = () => {
     setStyle((prev) => ({ ...prev, backgroundImage }))
   }
 
-  const handleCheckedDimLayerValue = (e: ChangeEvent<HTMLInputElement>) => {
-    setHasDimLayer(e.currentTarget.checked)
-    setStyle((prev) => ({ ...prev, blur: e.currentTarget.checked ? INIT_BLUR : null }))
+  const handleCheckedPaddingValue = (e: ChangeEvent<HTMLInputElement>) => {
+    setHasPadding(e.currentTarget.checked)
+    setStyle((prev) => ({ ...prev, padding: e.currentTarget.checked ? INIT_PADDING : null }))
   }
 
-  const handleChangeOpacity = (e: ChangeEvent<HTMLInputElement>) =>
-    setStyle((prev) => ({ ...prev, blur: Number(e.currentTarget.value) }))
+  const handleChangePadding = (padding: number) => setStyle((prev) => ({ ...prev, padding }))
 
   return (
     <div className={styles.background_editor_container}>
@@ -53,22 +53,17 @@ const BackgroundEditor = () => {
         />
       </div>
 
-      <div className={styles.dim_layer_container}>
-        <div className={styles.background_dim_layer}>
-          <label htmlFor='background_dim_layer' className={cx([hasDimLayer && styles.isChecked])}>
-            <BsLayersHalf />
+      <div className={styles.padding_container}>
+        <div className={styles.background_padding}>
+          <label htmlFor='padding' className={cx([hasPadding && styles.isChecked])}>
+            <RxPadding />
           </label>
-          <input
-            type='checkbox'
-            id='background_dim_layer'
-            checked={hasDimLayer}
-            onChange={handleCheckedDimLayerValue}
-          />
+          <input type='checkbox' id='padding' checked={hasPadding} onChange={handleCheckedPaddingValue} />
         </div>
 
-        {style.blur && (
+        {hasPadding && style.padding && (
           <div className={styles.opacity_container}>
-            <input type='range' value={style.blur} min='1' max='10' step={1} onChange={handleChangeOpacity} />
+            <FormInput.Range value={style.padding} min={1} max={70} step={1} onChange={handleChangePadding} />
           </div>
         )}
       </div>

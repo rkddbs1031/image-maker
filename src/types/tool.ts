@@ -4,7 +4,8 @@ import { IconBaseProps } from 'react-icons'
 export interface StyleState {
   width: number
   height: number
-  alignType: AlignType
+  alignHorizontalType: AlignHorizontalType
+  alignVerticalType: AlignVerticalType
   fontSize: number
   fontWeight: number
   fontFamily: FontFamilyType
@@ -13,17 +14,23 @@ export interface StyleState {
   backgroundImage: null | string
   title: string
   subTitle: string
-  blur: number | null
+  padding: number | null
 }
 
-export enum AlignType {
+export enum AlignHorizontalType {
   Center = 'center',
   Left = 'left',
   Right = 'right',
 }
 
+export enum AlignVerticalType {
+  Center = 'center',
+  Top = 'flex-start',
+  Bottom = 'flex-end',
+}
+
 export interface AlignList {
-  key: AlignType
+  key: AlignHorizontalType | AlignVerticalType
   icon: ComponentType<IconBaseProps>
 }
 

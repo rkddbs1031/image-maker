@@ -5,54 +5,64 @@ import { styleState } from 'states/tool'
 import styles from './imageViewer.module.scss'
 
 const ImageViewer = () => {
-  const style = useRecoilValue(styleState)
+  const {
+    title,
+    subTitle,
+    width,
+    height,
+    backgroundColor,
+    backgroundImage,
+    alignHorizontalType,
+    alignVerticalType,
+    fontSize,
+    fontWeight,
+    fontFamily,
+    color,
+    padding,
+  } = useRecoilValue(styleState)
 
-  const hasTitle = style.title.length > 0
-  const hasSubTitle = style.subTitle.length > 0
+  const hasTitle = title.length > 0
+  const hasSubTitle = subTitle.length > 0
 
   const layoutStyle = {
-    width: style.width,
-    height: style.height,
-    ...(style.backgroundColor && { backgroundColor: style.backgroundColor }),
-    ...(style.backgroundImage && { backgroundImage: `url(${style.backgroundImage})` }),
+    width,
+    height,
+    ...(backgroundColor && { backgroundColor }),
+    ...(backgroundImage && { backgroundImage: `url(${backgroundImage})` }),
+    justifyContent: alignVerticalType,
+    padding: `${padding}px`,
   }
 
   const titleStyle = {
-    textAlign: style.alignType,
-    fontSize: style.fontSize,
-    fontWeight: style.fontWeight,
-    fontFamily: style.fontFamily,
-    color: style.color,
+    textAlign: alignHorizontalType,
+    fontSize,
+    fontWeight,
+    fontFamily,
+    color,
   }
 
   const subTitleStyle = {
-    textAlign: style.alignType,
-    fontSize: style.fontSize * 0.5,
-    fontWeight: style.fontWeight,
-    fontFamily: style.fontFamily,
-    color: style.color,
-  }
-
-  const dimLayerBlur = {
-    backdropFilter: `blur(${style.blur}px)`,
+    textAlign: alignHorizontalType,
+    fontSize: fontSize * 0.5,
+    fontWeight,
+    fontFamily,
+    color,
   }
 
   return (
     <div className={styles.image_viewer_container}>
       <div className={styles.canvas} style={layoutStyle} id='canvas'>
         {hasTitle && (
-          <p style={titleStyle} className={styles.title}>
-            {style.title}
+          <p style={titleStyle} className={styles.title} id='title'>
+            {title}
           </p>
         )}
 
         {hasSubTitle && (
-          <p className={styles.sub_title} style={subTitleStyle}>
-            {style.subTitle}
+          <p className={styles.sub_title} style={subTitleStyle} id='subTitle'>
+            {subTitle}
           </p>
         )}
-
-        {style.blur && <div className={styles.dim_layer} style={dimLayerBlur} />}
       </div>
     </div>
   )

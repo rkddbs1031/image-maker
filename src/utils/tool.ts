@@ -1,10 +1,24 @@
 import { FaAlignCenter, FaAlignLeft, FaAlignRight } from 'react-icons/fa6'
-import { AlignList, AlignType, FontFamilyList, FontFamilyType, FontListType } from 'types/tool'
+import { MdAlignVerticalBottom, MdAlignVerticalCenter, MdAlignVerticalTop } from 'react-icons/md'
+import {
+  AlignList,
+  AlignHorizontalType,
+  AlignVerticalType,
+  FontFamilyList,
+  FontFamilyType,
+  FontListType,
+} from 'types/tool'
 
-export const alignList: AlignList[] = [
-  { key: AlignType.Center, icon: FaAlignCenter },
-  { key: AlignType.Left, icon: FaAlignLeft },
-  { key: AlignType.Right, icon: FaAlignRight },
+export const alignHorizontalList: AlignList[] = [
+  { key: AlignHorizontalType.Center, icon: FaAlignCenter },
+  { key: AlignHorizontalType.Left, icon: FaAlignLeft },
+  { key: AlignHorizontalType.Right, icon: FaAlignRight },
+]
+
+export const alignVerticalList: AlignList[] = [
+  { key: AlignVerticalType.Top, icon: MdAlignVerticalTop },
+  { key: AlignVerticalType.Center, icon: MdAlignVerticalCenter },
+  { key: AlignVerticalType.Bottom, icon: MdAlignVerticalBottom },
 ]
 
 export const fontWeightList: FontListType[] = [
@@ -33,4 +47,4 @@ export const fontFamilyList: FontFamilyList[] = [
   { key: FontFamilyType.DMSerifDisplay, label: 'DM Serif Display' },
 ]
 
-export const INIT_BLUR = 3
+export const INIT_PADDING = 30

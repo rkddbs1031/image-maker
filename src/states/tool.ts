@@ -1,12 +1,13 @@
 import { atom } from 'recoil'
-import { AlignType, FontFamilyType, StyleState } from 'types/tool'
+import { AlignHorizontalType, AlignVerticalType, FontFamilyType, StyleState } from 'types/tool'
 
 export const styleState = atom<StyleState>({
   key: '#styleState',
   default: {
     width: 500,
     height: 300,
-    alignType: AlignType.Center,
+    alignHorizontalType: AlignHorizontalType.Center,
+    alignVerticalType: AlignVerticalType.Center,
     fontSize: 50,
     fontWeight: 600,
     fontFamily: FontFamilyType.DMSerifDisplay,
@@ -15,6 +16,6 @@ export const styleState = atom<StyleState>({
     backgroundImage: null,
     title: 'Image Maker',
     subTitle: 'subtitle',
-    blur: null,
+    padding: null,
   },
 })
