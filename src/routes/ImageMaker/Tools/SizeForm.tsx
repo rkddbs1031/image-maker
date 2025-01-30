@@ -2,6 +2,7 @@ import { useRecoilState } from 'recoil'
 
 import { styleState } from 'states/tool'
 import { FormInput } from 'components/Input'
+import LabeledField from 'components/LabeledField'
 
 import styles from './toolContainer.module.scss'
 
@@ -14,31 +15,12 @@ const SizeForm = () => {
 
   return (
     <div className={styles.size_container}>
-      <dl>
-        <dt>사이즈</dt>
-        <dd>
-          <div className={styles.input_container}>
-            <span className={styles.option_title}>width</span>
-            <FormInput.Number
-              name='width'
-              value={style.width}
-              min={1}
-              className={styles.input}
-              onChange={handleChangeWidth}
-            />
-          </div>
-          <div className={styles.input_container}>
-            <span className={styles.option_title}>height</span>
-            <FormInput.Number
-              name='height'
-              value={style.height}
-              min={1}
-              className={styles.input}
-              onChange={handleChangeHeight}
-            />
-          </div>
-        </dd>
-      </dl>
+      <LabeledField label='Width'>
+        <FormInput.Number name='width' value={style.width} className={styles.input} onChange={handleChangeWidth} />
+      </LabeledField>
+      <LabeledField label='height'>
+        <FormInput.Number name='height' value={style.height} className={styles.input} onChange={handleChangeHeight} />
+      </LabeledField>
     </div>
   )
 }
