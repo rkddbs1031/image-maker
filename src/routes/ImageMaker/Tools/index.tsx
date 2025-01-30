@@ -9,15 +9,17 @@ import styles from './toolContainer.module.scss'
 const ToolContainer = () => {
   return (
     <div className={styles.tool_container}>
-      <BackgroundEditor />
-      <SizeForm />
+      <TextForm />
 
       <div className={styles.palette_container}>
         <AlignForm />
         <TextStyleForm />
       </div>
 
-      <TextForm />
+      <div className={styles.background_size_container}>
+        <SizeForm />
+        <BackgroundEditor />
+      </div>
     </div>
   )
 }

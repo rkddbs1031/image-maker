@@ -4,8 +4,8 @@ import { AlignType, FontFamilyType, StyleState } from 'types/tool'
 export const styleState = atom<StyleState>({
   key: '#styleState',
   default: {
-    width: 800,
-    height: 400,
+    width: 500,
+    height: 300,
     alignType: AlignType.Center,
     fontSize: 50,
     fontWeight: 600,

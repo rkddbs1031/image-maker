@@ -1,6 +1,6 @@
 import { useRecoilState } from 'recoil'
 
-import { fontFamilyList, fontSizeList, fontWeightList } from 'utils/tool'
+import { fontFamilyList, fontWeightList } from 'utils/tool'
 import { FontFamilyType } from 'types/tool'
 import { styleState } from 'states/tool'
 
