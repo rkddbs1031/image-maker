@@ -6,6 +6,8 @@ import { styleState } from 'states/tool'
 
 import DropDown from 'components/DropDown'
 import ColorPicker from 'components/ColorPicker'
+import { FormInput } from 'components/Input'
+import LabeledField from 'components/LabeledField'
 
 import styles from './toolContainer.module.scss'
 
@@ -21,29 +23,32 @@ const TextStyleForm = () => {
   const handleChangeTextColor = (color: string) => setStyle((prev) => ({ ...prev, color }))
 
   return (
-    <div className={styles.font_container}>
-      <div className={styles.font_size_container}>
-        <DropDown defaultValue={style.fontSize} list={fontSizeList} onClickDropDownList={handleChangeFontSize} />
-      </div>
-
-      <div className={styles.font_weight_container}>
+    <div className={styles.font_style_container}>
+      <LabeledField label='Text Size'>
+        <FormInput.Number
+          value={style.fontSize}
+          max={100}
+          onChange={handleChangeFontSize}
+          className={styles.font_size_input}
+        />
+      </LabeledField>
+      <LabeledField label='Font Weight' contentClassName={styles.red}>
         <DropDown
           defaultValue={style.fontWeight}
           list={fontWeightList}
-          height={224}
+          height={125}
           onClickDropDownList={handleChangeFontWeight}
         />
-      </div>
-
-      <div className={styles.font_family_container}>
+      </LabeledField>
+      <LabeledField label='Font Family'>
         <DropDown
           defaultValue={style.fontFamily}
           list={fontFamilyList}
           buttonMinWidth={175}
+          height={130}
           onClickDropDownList={handleChangeFontFamily}
         />
-      </div>
-
+      </LabeledField>
       <div className={styles.font_color_container}>
         <ColorPicker defaultValue={style.color} onChangeColor={handleChangeTextColor} />
       </div>
