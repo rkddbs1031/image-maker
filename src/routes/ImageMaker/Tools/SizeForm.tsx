@@ -18,7 +18,7 @@ const SizeForm = () => {
       <LabeledField label='Width'>
         <FormInput.Number name='width' value={style.width} className={styles.input} onChange={handleChangeWidth} />
       </LabeledField>
-      <LabeledField label='height'>
+      <LabeledField label='Height'>
         <FormInput.Number name='height' value={style.height} className={styles.input} onChange={handleChangeHeight} />
       </LabeledField>
     </div>
