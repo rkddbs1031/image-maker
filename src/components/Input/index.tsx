@@ -44,7 +44,25 @@ const TextInput = <T extends InputValueType>({ name, value, onChange, className 
   return <input type='text' name={name} value={value} onChange={handleInputChange} id={id} className={className} />
 }
 
+interface RangeInputProps<T> {
+  value: string | ReadonlyArray<string> | number | undefined
+  min: number
+  max: number
+  step: number
+  onChange?: (v: T) => void
+}
+
+const RangeInput = <T extends InputValueType>({ value, min, max, step, onChange }: RangeInputProps<T>) => {
+  const handleChangeRange = (e: ChangeEvent<HTMLInputElement>) => {
+    const { value: changedValue } = e.currentTarget
+    onChange && onChange(Number(changedValue) as T)
+  }
+
+  return <input type='range' value={value} min={min} max={max} step={step} onChange={handleChangeRange} />
+}
+
 export const FormInput = {
   Number: NumberInput,
   Text: TextInput,
+  Range: RangeInput,
 }
