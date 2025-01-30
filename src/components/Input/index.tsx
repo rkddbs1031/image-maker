@@ -5,31 +5,26 @@ interface NumberInputProps<T> {
   name?: string
   value?: InputValueType
   max?: number | string | undefined
-  min?: number | string | undefined
   onChange?: (v: T) => void
   className?: string
 }
 
-const NumberInput = <T extends InputValueType>({ name, value, min, max, onChange, className }: NumberInputProps<T>) => {
+const NumberInput = <T extends InputValueType>({ name, value, max, onChange, className = '' }: NumberInputProps<T>) => {
   const handleInputChange = (e: ChangeEvent<HTMLInputElement>) => {
     const { value: changedValue } = e.currentTarget
 
-    if (/^\d*$/.test(changedValue)) {
-      onChange && onChange(Number(changedValue) as T)
+    if (/^\d*$/.test(changedValue) && onChange) {
+      let v = Number(changedValue)
+
+      if (max) {
+        v = Number(max) < Number(changedValue) ? Number(max) : Number(changedValue)
+      }
+
+      onChange(v as T)
     }
   }
 
-  return (
-    <input
-      type='text'
-      name={name}
-      value={value}
-      min={min}
-      max={max}
-      onChange={handleInputChange}
-      className={className}
-    />
-  )
+  return <input type='text' name={name} value={value} onChange={handleInputChange} className={className} />
 }
 
 interface TextInputProps<T> {
@@ -40,7 +35,7 @@ interface TextInputProps<T> {
   className?: string
 }
 
-const TextInput = <T extends InputValueType>({ name, value, onChange, className, id }: TextInputProps<T>) => {
+const TextInput = <T extends InputValueType>({ name, value, onChange, className = '', id }: TextInputProps<T>) => {
   const handleInputChange = (e: ChangeEvent<HTMLInputElement>) => {
     const { value: changedValue } = e.currentTarget
     onChange && onChange(changedValue as T)
