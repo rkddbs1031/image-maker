@@ -14,9 +14,17 @@ interface DropDownProps<T> {
   buttonMinWidth?: number
   height?: number
   onClickDropDownList: (selectedValue: T) => void
+  selectedClassName?: string
 }
 
-const DropDown = <T,>({ defaultValue, list, buttonMinWidth, height, onClickDropDownList }: DropDownProps<T>) => {
+const DropDown = <T,>({
+  defaultValue,
+  list,
+  buttonMinWidth,
+  height,
+  onClickDropDownList,
+  selectedClassName = '',
+}: DropDownProps<T>) => {
   const [isDropped, setIsDropped] = useState(false)
   const [selectedValue, setSelectedValue] = useState(defaultValue)
 
@@ -47,7 +55,7 @@ const DropDown = <T,>({ defaultValue, list, buttonMinWidth, height, onClickDropD
     <>
       <button
         type='button'
-        className={styles.selected_algin}
+        className={selectedClassName}
         onClick={handleDropDown}
         style={{ minWidth: buttonMinWidth || 'auto' }}
       >
