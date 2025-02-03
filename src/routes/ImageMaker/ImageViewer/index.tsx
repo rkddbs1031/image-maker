@@ -30,7 +30,7 @@ const ImageViewer = () => {
     ...(backgroundColor && { backgroundColor }),
     ...(backgroundImage && { backgroundImage: `url(${backgroundImage})` }),
     justifyContent: alignVerticalType,
-    padding: `${padding}px`,
+    ...(padding && { padding: `${padding}px` }),
   }
 
   const titleStyle = {
