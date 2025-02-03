@@ -12,6 +12,7 @@ import { FormInput } from 'components/Input'
 
 import { cx } from 'styles'
 import styles from './toolContainer.module.scss'
+import BubbleInfo from 'components/BubbleInfo'
 
 const BackgroundEditor = () => {
   const [style, setStyle] = useRecoilState(styleState)
@@ -59,7 +60,7 @@ const BackgroundEditor = () => {
             <RxPadding />
           </label>
           <input type='checkbox' id='padding' checked={hasPadding} onChange={handleCheckedPaddingValue} />
-          <p className={styles.padding_info}>이미지 내부 여백을 설정할 수 있습니다.</p>
+          <BubbleInfo infoText='이미지 내부 여백을 설정할 수 있습니다.' width={182} className={styles.padding_info} />
         </div>
 
         {hasPadding && style.padding && (
