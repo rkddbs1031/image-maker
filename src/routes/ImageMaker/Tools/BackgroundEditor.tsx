@@ -59,6 +59,7 @@ const BackgroundEditor = () => {
             <RxPadding />
           </label>
           <input type='checkbox' id='padding' checked={hasPadding} onChange={handleCheckedPaddingValue} />
+          <p className={styles.padding_info}>이미지 내부 여백을 설정할 수 있습니다.</p>
         </div>
 
         {hasPadding && style.padding && (
